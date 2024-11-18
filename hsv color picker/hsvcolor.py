@@ -12,7 +12,6 @@ cv2.createTrackbar("UH","COLOR PICKER",0,179,nothing)
 cv2.createTrackbar("US","COLOR PICKER",0,255,nothing)
 cv2.createTrackbar("UV","COLOR PICKER",0,255,nothing)
 
-
 cap = cv2.VideoCapture(0)
 
 while True:
