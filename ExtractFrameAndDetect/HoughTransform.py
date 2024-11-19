@@ -5,6 +5,9 @@
 
 # The program extracts the frames from the videos and creates directories for each video  
 # at the path specified where the detected and discared images are to be stored 
+
+#------------------IMPORTANT NOTE-------------------------
+# Define the paths of the directories before using in line 22 , 23 , 24
 ##################################################################################################
 import cv2 
 import numpy as np 
