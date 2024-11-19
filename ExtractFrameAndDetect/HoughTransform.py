@@ -1,16 +1,7 @@
-# from ExtractFrameAndDetect.extractstore import directory as sort
+
 import cv2 
 import numpy as np 
 import os
-
-
-
-
-# path1 = r'C:\ROBOCON\OpenCV\sort&detect\data\videos'
-# path2 = r'C:\ROBOCON\OpenCV\sort&detect\data\images'
-# sort(path1 , path2)
-
-
 
 count = 0
 count_dir1=0
@@ -18,7 +9,6 @@ count_dir2=0
 while True:
     count = count+1
     
-    # path = os.path.join(r'C:\ROBOCON\OpenCV\sort&detect\data\images',f"video{count}")
     path = os.path.join(r'C:\ROBOCON\OpenCV\sort&detect\data\videos',f"video{count}.mp4")
     dirdetected = os.path.join(r'C:\ROBOCON\OpenCV\sort&detect\data\detected images',f"video{count}")
     dirdiscarded = os.path.join(r'C:\ROBOCON\OpenCV\sort&detect\data\discarded images',f"video{count}")
@@ -36,22 +26,15 @@ while True:
     count_dir1=0
     count_dir2=0
     while True:
-        # Read image. 
-        # count1 = count1+1
-        # finalpath = os.path.join(path,f"image{count1}.jpg")
-        # if not os.path.exists(finalpath):
-        #     break
-        # frame = cv2.imread(finalpath)
         
         succ,frame = cap.read()
         if not succ: 
             break
         hsv = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
-        lower_bound = np.array([0, 100, 80])  # Lower bound for orange
+        lower_bound = np.array([0, 100, 80])  
         upper_bound = np.array([10, 180, 160])  
         mask = cv2.inRange(hsv , lower_bound , upper_bound)
 
-        # Blur using 5 * 5 kernel. 
         blurred = cv2.blur(mask,(5,5)) 
          
         detected_circles = cv2.HoughCircles(blurred, 
