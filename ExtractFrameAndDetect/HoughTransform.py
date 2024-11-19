@@ -16,9 +16,9 @@ count_dir2=0
 while True:
     count = count+1
     
-    path = os.path.join(r'XX Insert the path of the folder with the videos XX',f"video{count}.mp4")
-    dirdetected = os.path.join(r'XX Inset the path where the detected frames are to be stored XX',f"video{count}")
-    dirdiscarded = os.path.join(r'XX Inset the path where the discarded frames are to be stored XX',f"video{count}")
+    path = os.path.join(r'XX Insert the path of the folder with the videos XX',f"video{count}.mp4") #Insert path
+    dirdetected = os.path.join(r'XX Inset the path where the detected frames are to be stored XX',f"video{count}")  #Insert path
+    dirdiscarded = os.path.join(r'XX Inset the path where the discarded frames are to be stored XX',f"video{count}") #Insert path
 
     if not os.path.exists(path):
         break
