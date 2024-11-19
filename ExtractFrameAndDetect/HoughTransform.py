@@ -1,4 +1,4 @@
-from ExtractFrameAndDetect.extractstore import directory as sort
+# from ExtractFrameAndDetect.extractstore import directory as sort
 import cv2 
 import numpy as np 
 import os
