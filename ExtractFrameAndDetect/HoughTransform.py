@@ -1,4 +1,11 @@
+#################################################################################################
+# This program is made to detect an orange basketball from a set of videos stored in a directory
 
+# The videos are to be stored in the format "video1.mp4" , "video2.mp4" and so on
+
+# The program extracts the frames from the videos and creates directories for each video  
+# at the path specified where the detected and discared images are to be stored 
+##################################################################################################
 import cv2 
 import numpy as np 
 import os
@@ -9,9 +16,9 @@ count_dir2=0
 while True:
     count = count+1
     
-    path = os.path.join(r'C:\ROBOCON\OpenCV\sort&detect\data\videos',f"video{count}.mp4")
-    dirdetected = os.path.join(r'C:\ROBOCON\OpenCV\sort&detect\data\detected images',f"video{count}")
-    dirdiscarded = os.path.join(r'C:\ROBOCON\OpenCV\sort&detect\data\discarded images',f"video{count}")
+    path = os.path.join(r'XX Insert the path of the folder with the videos XX',f"video{count}.mp4")
+    dirdetected = os.path.join(r'XX Inset the path where the detected frames are to be stored XX',f"video{count}")
+    dirdiscarded = os.path.join(r'XX Inset the path where the discarded frames are to be stored XX',f"video{count}")
 
     if not os.path.exists(path):
         break
@@ -69,10 +76,15 @@ while True:
             
     cap.release()
     cv2.destroyAllWindows()
-    falsepositive = 0
-    falsenegative = 30
-    truepositive = 112
-    truenegative= 185
+    
+
+#Test data for texting the accuracy of the algorithm
+#Can change the values for re-evaluation
+
+falsepositive = 0
+falsenegative = 30
+truepositive = 112
+truenegative= 185
 
 accuracy = (truepositive+truenegative)/(falsenegative+falsepositive+truenegative+truepositive)
 print("Accuracy: ",accuracy*100)
